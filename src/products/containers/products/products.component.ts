@@ -10,6 +10,7 @@ import { Pizza } from '../../models/pizza.model';
 
 @Component({
   selector: 'products',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['products.component.scss'],
   template: `
     <div class="products">
@@ -35,7 +36,6 @@ import { Pizza } from '../../models/pizza.model';
 export class ProductsComponent implements OnInit {
   pizzas$: Observable<Pizza[]>;
 
-  // constructor(private pizzaService: PizzasService) {}
   constructor(private store: Store<fromStore.ProductsState>) {}
 
   ngOnInit() {
